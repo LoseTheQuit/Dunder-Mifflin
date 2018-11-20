@@ -1,0 +1,149 @@
+[
+  {
+    "data": {
+      "state": "California",
+      "yes": 24,
+      "no": 6
+    }
+  },
+  {
+    "data": {
+      "state": "Arizona",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "Wyoming",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "Vermont",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "Wisconsin",
+      "yes": 0,
+      "no": 1
+    }
+  },
+  {
+    "data": {
+      "state": "South Dakota",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "Minnesota",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "Florida",
+      "yes": 2,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "North Dakota",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "Georgia",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "Louisiana",
+      "yes": 2,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "Maine",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "New Jersey",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "Pennsylvania",
+      "yes": 0,
+      "no": 1
+    }
+  },
+  {
+    "data": {
+      "state": "Connecticut",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "Oklahoma",
+      "yes": 1,
+      "no": 1
+    }
+  },
+  {
+    "data": {
+      "state": "Nevada",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "North Carolina",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "New York",
+      "yes": 1,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "Texas",
+      "yes": 2,
+      "no": 0
+    }
+  },
+  {
+    "data": {
+      "state": "Colorado",
+      "yes": 3,
+      "no": 0
+    }
+  }
+]

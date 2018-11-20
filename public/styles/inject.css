@@ -1,0 +1,473 @@
+@-webkit-keyframes bgMove {
+    0% {
+        background-position: 4000px 0;
+    }
+    50% {
+        background-position: -4000px 0;
+    }
+    100% {
+        background-position: 4000px 0;
+    }
+}
+
+@-webkit-keyframes fgMove {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.bodyOverlay {
+    margin-top: 100px;
+    position: sticky;
+    -webkit-animation: fgMove 500s infinite;
+    animation: fgMove 500s infinite;
+    background: url('../img/customJumbotronoverlay.svg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    height: auto;
+    min-height: 1500px;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 67px;
+}
+
+.hold_off_on_that {
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #1e5799 0%, #27a2f4 21%, #2085c9 48%, #21b8d3 77%, #017bbc 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #1e5799 0%, #27a2f4 21%, #2085c9 48%, #21b8d3 77%, #017bbc 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #1e5799 0%, #27a2f4 21%, #2085c9 48%, #21b8d3 77%, #017bbc 100%);
+}
+
+
+/*000000000000000*/
+
+
+/*000000000000000*/
+
+
+/*000000000000000*/
+
+.robotoh1 {
+    font-weight: 300;
+    font-size: 67px;
+}
+
+.robotoh2 {
+    font-weight: 300;
+    font-size: 37px;
+    padding-bottom: 30px;
+}
+
+.robotoh3 {
+    font-weight: 300;
+    font-size: 33px;
+    margin-top: 200px;
+}
+
+.robotoHeader {
+    font-weight: 700;
+    font-size: 25x;
+}
+
+
+/**/
+
+
+/**/
+
+
+/**/
+
+.cardStyle {
+    padding: 3%;
+    color: #fff;
+    word-wrap: break-word;
+}
+
+.cardOverlay1 {
+    background: rgba(0, 107, 148, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
+}
+
+.cardOverlay2 {
+    background: rgba(0, 126, 173, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
+}
+
+.cardOverlay3 {
+    background: rgba(0, 144, 199, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
+}
+
+.cardOverlay4 {
+    background: rgba(0, 163, 224, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
+}
+
+.cardOverlay5 {
+    background: rgba(0, 182, 250, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
+}
+
+.cardOverlay6 {
+    background: rgba(20, 191, 255, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
+}
+
+.cardOverlay7 {
+    background: rgba(46, 198, 255, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
+}
+
+._blur {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.thta_missing_padding {
+    padding: 100px 10px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        max-width: 100%;
+        height: 100%
+    }
+}
+
+@media (min-width: 1200px) {
+    .affix {
+        /* top: 50px; */
+        /* background: rgba(255, 255, 255, .5); */
+        /* height: 100%; */
+        position: fixed;
+    }
+}
+
+@media (max-width: 1200px) {
+    .robotoh1 {
+        font-weight: 300;
+        font-size: 40px;
+    }
+    .robotoh2 {
+        font-weight: 300;
+        font-size: 23px;
+        padding-bottom: 30px;
+    }
+    .robotoh3 {
+        font-weight: 300;
+        font-size: 17px;
+        margin-top: 200px;
+    }
+    .robotoHeader {
+        font-weight: 700;
+        font-size: 25x;
+    }
+}
+
+.theDividingLine {
+    display: block;
+    height: 3px;
+    width: 90%;
+    background: #fff;
+}
+
+.cardOverRide {
+    padding: 3%;
+    background: rgba(0, 0, 0, .005);
+}
+
+.theWire {
+    background: rgba(0, 172, 0, .5);
+    width: 100%;
+    height: 100%;
+}
+
+.theExceptionalP {
+    line-height: 10px;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+
+/*000000000000*/
+
+.bodyWrapper:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -100;
+    display: block;
+    background-image: url('https://cdn3.vox-cdn.com/uploads/chorus_asset/file/4387649/Golden-Gate-Bridge_-San-Francisco_-CA.-Creative-Commons-by-Thomas-Hawk..0.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.bodyWrapper {
+    position: relative;
+    z-index: 0;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    background: #1e5799;
+    align-items: center;
+    margin: 0 auto;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    word-wrap: break-word;
+}
+
+
+/*000000000000*/
+
+.display_flex {
+    display: flex;
+}
+
+.flex-item-center {
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*000000000000*/
+
+.navWrapper {
+    padding: 20px 0px 100px;
+}
+
+.hamburger-menu {
+    font-size: 25px;
+    cursor: pointer;
+    color: #000;
+    border: 1px solid #fff;
+    padding: 3px;
+    background-color: #fff;
+}
+
+
+/*000000000000*/
+
+.navbar-toggle {
+    background: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin: 28px 6px 10px;
+    padding: 12px 14px;
+    border: 2px solid black;
+    color: #000;
+}
+
+.btn-navbar:hover {
+    background-color: transparent;
+    background-image: none;
+    border-radius: 0;
+    border: 0 !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding-top: 23px;
+}
+
+.btn.btn-primary {
+    color: #fff;
+}
+
+.btn.btn-primary:focus {
+    color: #fff;
+}
+
+.open>.btn-primary.dropdown-toggle:focus,
+.open>.btn-primary.dropdown-toggle:hover {
+    color: #fff;
+}
+
+
+/*000000000000*/
+
+
+/*000000000000*/
+
+.jumbo_text {
+    font-size: 182px;
+    margin: 0px 0px 100px;
+}
+
+.poll_question_container {
+    border: 1px solid #d4d4d4;
+    color: white;
+    display: block;
+    background-image: url('https://cdn3.vox-cdn.com/uploads/chorus_asset/file/4387649/Golden-Gate-Bridge_-San-Francisco_-CA.-Creative-Commons-by-Thomas-Hawk..0.jpg');
+    background-size: cover;
+}
+
+.card {
+    width: 100%;
+    transition: all linear .25s;
+    padding: 50px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .25);
+    display: inline-block;
+    flex-direction: column;
+    background: rgba(0, 107, 148, .25);
+    border-radius: 0px;
+    border: 5px solid hsla(0, 0%, 100%, .5);
+    background-clip: padding-box;
+}
+
+.card:hover {
+    transition: all linear .25s;
+    border: 1px solid rgba(255, 255, 255, .75);
+    box-shadow: 0 7px 1px rgba(0, 0, 0, .25);
+    border: 5.5px solid hsla(0, 0%, 100%, .60);
+}
+
+.card-overlay {
+    background-color: rgba(0, 0, 0, .750);
+    width: 100%;
+    height: 100%;
+}
+
+.background_overlay {
+    background-color: rgba(0, 0, 0, .750);
+    width: 100vw;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.ghost-botton {
+    border: 1px solid #fff;
+    padding: 10px 40px;
+    color: white;
+    margin: 20px 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0px;
+}
+
+.poll-response {
+    display: flex;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+}
+
+.poll-question {
+    text-align: left;
+    font-size: 34px;
+}
+
+.stats_container {
+    display: inline-block;
+    margin: 50px 0px 250px;
+}
+
+.hide {
+    display: none;
+}
+
+.the_other_hide {
+    width: 0px;
+    height: 0px
+}
+
+.dropdown-menu {
+    /*color: #fff;*/
+    /*position: relative;*/
+}
+
+@media only screen and (max-width: 480px) {
+    .jumbo_text {
+        font-size: 82px;
+        margin: 0px 0px 50px;
+    }
+    .poll-question {
+        text-align: left;
+        font-size: 27px;
+    }
+    .card {
+        padding: 15px;
+    }
+}
+
+.fixedPosition {
+    position: fixed;
+}

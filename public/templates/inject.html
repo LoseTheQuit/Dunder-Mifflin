@@ -1,0 +1,45 @@
+<style media="screen">
+  .full_page_panel * {
+    font-family: "Roboto", monospace;
+  }
+
+  .full_page_panel {
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    background: rgba(234, 123, 111, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+  }
+</style>
+
+<div class="full_page_panel">
+
+  <h1>Welcome to Dunder-Mifflin</h1>
+
+  <p>Welcome to the Dunder-Mifflin internal network.</p>
+  <p>Please enter your username to view your posts and comments.</p>
+
+  <form name="myForm">
+    <label>Email:
+      <input type="email" name="input" ng-model="email.text" required>
+    </label>
+    <div role="alert">
+      <span class="error" ng-show="myForm.input.$error.required">
+        Required!</span>
+      <span class="error" ng-show="myForm.input.$error.email">
+        Not valid email!</span>
+    </div>
+    <tt>text = {{email.text}}</tt><br />
+    <tt>myForm.input.$valid = {{myForm.input.$valid}}</tt><br />
+    <tt>myForm.input.$error = {{myForm.input.$error}}</tt><br />
+    <tt>myForm.$valid = {{myForm.$valid}}</tt><br />
+    <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br />
+    <tt>myForm.$error.email = {{!!myForm.$error.email}}</tt><br />
+  </form>
+
+
+</div>
