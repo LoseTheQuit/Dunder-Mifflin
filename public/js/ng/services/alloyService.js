@@ -7,11 +7,24 @@ app.service("alloyService", function($http) {
   console.log("INSIDE: alloy Service");
 
   const USERS_URL = "https://jsonplaceholder.typicode.com/users";
-  const POSTS_URL = "​https://jsonplaceholder.typicode.com/posts";
-  const COMMENTS_URL = "https://jsonplaceholder.typicode.com/comments";
+  const POSTS_URL = "https://jsonplaceholder.typicode.com/posts";
+  const COMMS_URL = "https://jsonplaceholder.typicode.com/comments";
 
   this.sessionCounter = 0;
   this.authUser = {};
+
+  this.UsersList = [];
+  this.PostsList = [];
+  this.UserPostsList = [];
+  this.CommentsList = [];
+
+  this.setComments = comments => {
+    this.CommentsList = comments;
+  };
+
+  this.getComments = () => {
+    return this.CommentsList;
+  };
 
   this.salesSpy = function(params, callback) {
     $http({
@@ -29,7 +42,12 @@ app.service("alloyService", function($http) {
     }).then(callback);
   };
 
-  this.UsersList;
+  this.getComments = function(callback) {
+    $http({
+      url: COMMS_URL,
+      method: "GET"
+    }).then(callback);
+  };
 
   this.getUsers = function(callback) {
     $http({
@@ -37,6 +55,7 @@ app.service("alloyService", function($http) {
       method: "GET"
     }).then(callback);
   };
+
   this.getPosts = function(callback) {
     $http({
       url: POSTS_URL,

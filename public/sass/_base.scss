@@ -18,3 +18,42 @@
 .padding_0 {
   padding: 0;
 }
+
+.full_page_panel * {
+  font-family: "Roboto", monospace;
+}
+
+.full_page_panel {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+  height: 100%;
+  display: table;
+}
+
+.center_this {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input[type=email] {
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button {
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.full_width {
+  width: 100%;
+}
