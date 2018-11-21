@@ -4,21 +4,58 @@ console.log("OUTSIDE: alloy Controller");
 app.controller("alloyController", function(
   $scope,
   $http,
+  $cookieStore,
+  $window,
+  $rootScope,
+  $location,
   alloyService,
   lodash
 ) {
   console.log("INSIDE: alloy Controller");
 
-  $scope.getUsers = function(x) {};
+  $scope.initialGet = true;
+  $scope.currentUser = {};
+  $scope.warningMessage = "";
 
-  // https://jsonplaceholder.typicode.com/users
+  $scope.validate = function(form) {
+    console.log(form);
+
+    // document.body.appendChild(form);
+
+    $scope.warningMessage = "User Not Found.";
+
+    alloyService.UsersList.map(user => {
+      if (user.email === $scope.email.text) {
+        alloyService.authenticated = true;
+        $scope.warningMessage = "User Found";
+        $scope.currentUser = user;
+
+        console.log($scope.currentUser);
+        console.log($scope.currentUser);
+        console.log($scope.currentUser);
+
+        // $cookieStore.put("currentUser", $scope.email.text);
+        $window.location.href = "#/posts";
+      }
+    });
+  };
+
+  $scope.getUsers = function() {
+    if ($scope.initialGet) {
+      $scope.initialGet = false;
+
+      alloyService.getUsers(response => {
+        alloyService.UsersList = response.data;
+      });
+    }
+  };
 
   $scope.trafficSpy = function(x) {
     var dataToSend = {};
 
     $.get("https://api.ipify.org?format=json", function(data, error) {
       dataToSend.ip = data.ip;
-      dataToSend.site = "MMTR";
+      dataToSend.site = "DUNDER";
       dataToSend.referrer = document.referrer;
       dataToSend.vendor = navigator.vendor;
       dataToSend.userAgent = navigator.userAgent;

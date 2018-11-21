@@ -7,12 +7,29 @@
     width: 100%;
     min-height: 100vh;
     background: white;
-    background: rgba(234, 123, 111, .8);
+    /* background: rgba(234, 123, 111, .8); */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 100%;
+  }
+
+  .center_this {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  input[type=email] {
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .full_width {
+    width: 100%;
   }
 </style>
 
@@ -23,23 +40,38 @@
   <p>Welcome to the Dunder-Mifflin internal network.</p>
   <p>Please enter your username to view your posts and comments.</p>
 
-  <form name="myForm">
-    <label>Email:
-      <input type="email" name="input" ng-model="email.text" required>
-    </label>
-    <div role="alert">
-      <span class="error" ng-show="myForm.input.$error.required">
-        Required!</span>
-      <span class="error" ng-show="myForm.input.$error.email">
-        Not valid email!</span>
+  <form name="dunderForm" class="center_this" id="form">
+
+    <div class="col-md-12">
+      <label class="center_this">Email:</label>
     </div>
-    <tt>text = {{email.text}}</tt><br />
-    <tt>myForm.input.$valid = {{myForm.input.$valid}}</tt><br />
-    <tt>myForm.input.$error = {{myForm.input.$error}}</tt><br />
-    <tt>myForm.$valid = {{myForm.$valid}}</tt><br />
-    <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br />
-    <tt>myForm.$error.email = {{!!myForm.$error.email}}</tt><br />
+    <div class="col-md-12">
+      <input ng-change="getUsers()" type="email" name="input" ng-model="email.text" required>
+    </div>
+    <h6>Nathan@yesenia.net</h6>
+    </h1>
+    <div class="col-md-12">
+
+      <div role="alert" class="center_this">
+        <button type="submit" ng-click="validate(dunderForm)" ng-disabled="dunderForm.invalid">SEND</button>
+      </div>
+
   </form>
 
 
-</div>
+  <div class="col-md-12" class="center_this">
+    <div role="alert" class="center_this ">
+      <h4>{{warningMessage}}</h4>
+
+      <h4 class="error" ng-show="dunderForm.input.$error.required">
+        Please enter an email address.
+      </h4>
+
+      <h4 class="error" ng-show="dunderForm.input.$error.email">
+        Not a valid email..
+      </h4>
+
+
+    </div>
+
+  </div>
