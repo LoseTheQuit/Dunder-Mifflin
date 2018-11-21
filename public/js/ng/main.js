@@ -34,21 +34,25 @@ var app = angular
   })
   .run(function($rootScope, $location, $cookieStore, $http, $window) {
     // keep user logged in after page refresh
-    // $rootScope.globals = $cookieStore.get("globals") || {};
-    // console.log($rootScope.globals);
-    //
-    // $rootScope.$on("$locationChangeStart", function(event, next, current) {
-    //   console.log("ROUTE CHANGE!!!");
-    //
-    //   // redirect to login page if not logged in and trying to access a restricted page
-    //
-    //   console.log($rootScope.globals.currentUser);
-    //   var loggedIn = $rootScope.globals.currentUser;
-    //   if (!loggedIn) {
-    //     // $window.location.href = "#/home";
-    //     // $location.path("/home");
-    //   }
-    // });
+    $rootScope.currentUser = $cookieStore.get("currentUser") || {};
+
+    $rootScope.$on("$locationChangeStart", function(event, next, current) {
+      // event.preventDefault();
+      console.log("ROUTE CHANGE!!!");
+
+      // redirect to login page if not logged in and trying to access a restricted page
+      let loggedIn = $rootScope.currentUser.text;
+
+      if (loggedIn) {
+        console.log("USER LOGGED IN");
+        // $window.location.href = "#/posts";
+        $location.path("/posts");
+      } else {
+        console.log("USER --NOT-- LOGGED IN");
+        // $window.location.href = "#/home";
+        $location.path("/home");
+      }
+    });
   });
 
 console.log("INSIDE: main");

@@ -2,25 +2,31 @@
 
   <div class="col-md-12">
     <h1>DUNDER-MIFFLIN</h1>
+    <br>
+    <div class="center_this">
+      <button ng-click="deleteCookies()">DELETE COOKIES</button>
+    </div>
+
   </div>
-  <div class="col-md-12">
-    {{currentUser}}
+
+  <div class="col-md-2">
+    <h6>Name: {{currentUser.name}}</h6>
+    <h6>Username: {{currentUser.username}}</h6>
+    <h6>Street: {{currentUser.address.street}}</h6>
+    <h6>Suite: {{currentUser.address.suite}}</h6>
+    <h6>City: {{currentUser.address.city}}</h6>
+    <h6>Zipcode: {{currentUser.address.zipcode}}</h6>
+    <h6>Phone: {{currentUser.phone}}</h6>
+    <h6>Website: {{currentUser.website}}</h6>
+    <h6>Company Name: {{currentUser.company.name}}</h6>
+    <h6>Catch Phrase: {{currentUser.company.catchPhrase}}</h6>
+    <h6>BS: {{currentUser.company.bs}}</h6>
   </div>
-  <div class="col-md-3">
-    {{currentUser.name}}
-    {{currentUser.username}}
-    {{currentUser.address.street}}
-    {{currentUser.address.suite}}
-    {{currentUser.address.city}}
-    {{currentUser.address.zipcode}}
-    {{currentUser.phone}}
-    {{currentUser.website}}
-    {{currentUser.company.name}}
-    {{currentUser.company.catchPhrase}}
-    {{currentUser.company.bs}}
-  </div>
-  <div class="col-md-9">
-    {{currentUser}}
+  <div class="col-md-10">
+    <!-- {{currentUser}} -->
+    <div ng-repeat="post in postsList">
+      <h2>{{post}}</h2>
+    </div>
   </div>
 
 </div>

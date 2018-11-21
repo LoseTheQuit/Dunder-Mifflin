@@ -4,6 +4,7 @@ console.log("OUTSIDE: alloy Controller");
 app.controller("alloyController", function(
   $scope,
   $http,
+  $cookies,
   $cookieStore,
   $window,
   $rootScope,
@@ -16,25 +17,39 @@ app.controller("alloyController", function(
   $scope.initialGet = true;
   $scope.currentUser = {};
   $scope.warningMessage = "";
+  $scope.postsList = alloyService.PostsList;
+
+  $scope.findCurrentUser = function() {
+    const currentUser = $cookieStore.get("currentUser");
+    console.log(currentUser);
+    console.log();
+    let userData = {};
+    if (currentUser.text)
+      alloyService.UsersList.map(user => {
+        if (user.email === currentUser.text) {
+          userData = user;
+        }
+      });
+    return userData;
+  };
 
   $scope.validate = function(form) {
-    console.log(form);
-
+    // console.log(form);
     // document.body.appendChild(form);
 
     $scope.warningMessage = "User Not Found.";
 
     alloyService.UsersList.map(user => {
       if (user.email === $scope.email.text) {
-        alloyService.authenticated = true;
         $scope.warningMessage = "User Found";
-        $scope.currentUser = user;
+        alloyService.authUser = user;
 
-        console.log($scope.currentUser);
-        console.log($scope.currentUser);
-        console.log($scope.currentUser);
+        $scope.getPosts();
+        $cookieStore.put("currentUser", $scope.email);
 
+        // $scope.currentUser = user;
         // $cookieStore.put("currentUser", $scope.email.text);
+
         $window.location.href = "#/posts";
       }
     });
@@ -43,9 +58,28 @@ app.controller("alloyController", function(
   $scope.getUsers = function() {
     if ($scope.initialGet) {
       $scope.initialGet = false;
-
       alloyService.getUsers(response => {
         alloyService.UsersList = response.data;
+        $scope.currentUser = $scope.findCurrentUser();
+      });
+    }
+  };
+
+  $scope.getUsers();
+
+  $scope.deleteCookies = function() {
+    console.log("COOOKIES DELETED");
+    $cookieStore.put("currentUser", "");
+    $window.location.href = "#/home";
+  };
+
+  $scope.getPosts = function() {
+    if ($scope.initialGet) {
+      $scope.initialGet = false;
+
+      alloyService.getPosts(response => {
+        console.log(response);
+        alloyService.PostsList = response.data;
       });
     }
   };

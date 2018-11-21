@@ -11,11 +11,7 @@ let fs = require("fs"),
   Twitter = require("twitter"),
   request = require("request"),
   querystring = require("querystring"),
-  cookieParser = require("cookie-parser"),
-  jsonfile = require("jsonfile"),
-  Client = require("node-rest-client").Client;
-
-var client = new Client();
+  cookieParser = require("cookie-parser");
 
 app.use(cookieParser());
 
@@ -56,14 +52,4 @@ app.get("/", function(req, res) {
 
   var html = fs.readFileSync("public/views/base.html");
   res.end(html);
-});
-
-app.post("/write", function(req, res) {
-  console.log("\n");
-  console.log("******* INCOMING REQUEST - Load Template *******".black.bgWhite);
-  console.log("\n");
-
-  console.log(req.body);
-
-  res.json(req.body);
 });

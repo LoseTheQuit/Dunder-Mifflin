@@ -4,10 +4,10 @@
   }
 
   .full_page_panel {
+    /* background: rgba(234, 123, 111, .8); */
     width: 100%;
     min-height: 100vh;
     background: white;
-    /* background: rgba(234, 123, 111, .8); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,15 +45,24 @@
     <div class="col-md-12">
       <label class="center_this">Email:</label>
     </div>
-    <div class="col-md-12">
-      <input ng-change="getUsers()" type="email" name="input" ng-model="email.text" required>
+
+    <div class="col-md-12 center_this">
+      <!-- ng-change="getUsers()" -->
+      <input type="email" name="input" ng-model="email.text" required>
     </div>
+
+    <br>
     <h6>Nathan@yesenia.net</h6>
-    </h1>
+    <br>
+
     <div class="col-md-12">
 
       <div role="alert" class="center_this">
         <button type="submit" ng-click="validate(dunderForm)" ng-disabled="dunderForm.invalid">SEND</button>
+      </div>
+      <br>
+      <div class="center_this">
+        <button ng-click="deleteCookies()">DELETE COOKIES</button>
       </div>
 
   </form>
@@ -70,7 +79,6 @@
       <h4 class="error" ng-show="dunderForm.input.$error.email">
         Not a valid email..
       </h4>
-
 
     </div>
 
