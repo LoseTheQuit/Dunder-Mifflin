@@ -6,7 +6,6 @@ app.controller("alloyController", function(
   $http,
   $cookies,
   $cookieStore,
-  $window,
   $rootScope,
   $location,
   alloyService,
@@ -20,9 +19,7 @@ app.controller("alloyController", function(
   $scope.postsList = alloyService.PostsList;
   $scope.commentsList = alloyService.CommentsList;
   $scope.currentPostIDs = [];
-  $scope.myFunc = function() {
-    console.log("I WAS CLICKED");
-  };
+
   $scope.findCurrentUser = function() {
     const currentUser = $cookieStore.get("currentUser");
     let userData = {};
@@ -55,7 +52,6 @@ app.controller("alloyController", function(
   $scope.restructurePosts = _comments =>
     new Promise((resolve, reject) => {
       alloyService.CommentsList = _comments;
-
       alloyService.CommentsList.map(comment => {
         if ($scope.currentPostIDs.includes(comment.postId)) {
           alloyService.UserPostsList.map(post => {
@@ -101,29 +97,22 @@ app.controller("alloyController", function(
         alloyService.getUsers(response => {
           alloyService.UsersList = response.data;
           $scope.currentUser = $scope.findCurrentUser();
-
           $scope.findCurrentPosts($scope.currentUser);
-          // $scope.currentPosts = $scope.findCurrentPosts($scope.currentUser);
-          // $scope.currentPosts = _currentPosts;
           resolve(true);
         });
       }
     });
 
-  // const foo = () => new Promise((resolve, reject) => {});
-
   $scope
     .getPosts()
     .then(posts => $scope.getUsers())
-    .then(someVAR => $scope.getComments())
+    .then(data => $scope.getComments())
     .then(comments => $scope.restructurePosts(comments))
     .then(userPostsList => {
       $scope.$apply(function() {
         $scope.currentPosts = userPostsList;
       });
-      // $scope.currentPosts = userPostsList;
     });
-  // .then(userPostsList => $scope.getComments(userPostsList));
 
   $scope.deleteCookies = function() {
     console.log("COOOKIES DELETED");
@@ -137,7 +126,6 @@ app.controller("alloyController", function(
     alloyService.UsersList.map(user => {
       if (user.email === $scope.email.text) {
         $scope.warningMessage = "User Found";
-        alloyService.authUser = user;
 
         $cookieStore.put("currentUser", $scope.email);
         $location.path("/posts");
@@ -146,7 +134,7 @@ app.controller("alloyController", function(
   };
 
   $scope.trafficSpy = function(x) {
-    var dataToSend = {};
+    let dataToSend = {};
 
     $.get("https://api.ipify.org?format=json", function(data, error) {
       dataToSend.ip = data.ip;

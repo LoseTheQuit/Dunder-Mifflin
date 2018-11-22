@@ -2,7 +2,6 @@
 
 console.log("OUTSIDE: alloy Service");
 
-//angular.module("main")
 app.service("alloyService", function($http) {
   console.log("INSIDE: alloy Service");
 
@@ -11,28 +10,11 @@ app.service("alloyService", function($http) {
   const COMMS_URL = "https://jsonplaceholder.typicode.com/comments";
 
   this.sessionCounter = 0;
-  this.authUser = {};
 
   this.UsersList = [];
   this.PostsList = [];
   this.UserPostsList = [];
   this.CommentsList = [];
-
-  this.setComments = comments => {
-    this.CommentsList = comments;
-  };
-
-  this.getComments = () => {
-    return this.CommentsList;
-  };
-
-  this.salesSpy = function(params, callback) {
-    $http({
-      url: "https://trafficspy-api.herokuapp.com/sales-spy",
-      method: "POST",
-      data: params
-    }).then(callback);
-  };
 
   this.trafficSpy = function(params, callback) {
     $http({
