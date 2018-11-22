@@ -128,7 +128,7 @@ app.controller("alloyController", function(
   $scope.deleteCookies = function() {
     console.log("COOOKIES DELETED");
     $cookieStore.put("currentUser", "");
-    $window.location.href = "#/home";
+    $location.path("/home");
   };
 
   $scope.validate = function(form) {
@@ -140,7 +140,7 @@ app.controller("alloyController", function(
         alloyService.authUser = user;
 
         $cookieStore.put("currentUser", $scope.email);
-        $window.location.href = "#/posts";
+        $location.path("/posts");
       }
     });
   };

@@ -45,14 +45,14 @@ var app = angular
 
       if (loggedIn) {
         console.log("USER LOGGED IN");
-        // $window.location.href = "#/posts";
+        $window.location.href = "#/posts";
         // ÷÷
-        $location.path("/posts");
+        // $location.path("/posts");
       } else {
         console.log("USER --NOT-- LOGGED IN");
-        // $window.location.href = "#/home";
+        $window.location.href = "#/home";
         // ÷÷
-        $location.path("/home");
+        // $location.path("/home");
       }
     });
   });
