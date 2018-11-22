@@ -35,7 +35,8 @@
 <div class="full_page_panel center_this">
 
 
-  <form name="dunderForm" id="dunderForm" class="center_this">
+  <!-- <form name="dunderForm" id="dunderForm" class="center_this"> -->
+  <form name="dunderForm" id="dunderForm" class="center_this" ng-submit="validate(dunderForm)">
     <h1>Welcome to Dunder-Mifflin</h1>
 
     <p>Welcome to the Dunder-Mifflin internal network.</p>
@@ -49,28 +50,18 @@
       <!-- ng-change="getUsers()" -->
       <input type="email" name="input" ng-model="email.text" required>
     </div>
-
-    <br>
-    <h5>Test emails</h5>
-    <h6>Nathan@yesenia.net</h6>
-    <h6>Sincere@april.biz</h6>
-    <h6>Shanna@melissa.tv</h6>
-    <br>
-
     <div class="col-md-12">
-
+      <br>
       <div role="alert" class="center_this">
-        <button type="submit" ng-click="validate(dunderForm)" ng-disabled="dunderForm.invalid">SEND</button>
+        <!-- <button type="submit" ng-click="validate(dunderForm)" ng-disabled="dunderForm.invalid">SEND</button> -->
+        <button type="submit" ng-disabled="dunderForm.invalid">SEND</button>
       </div>
       <br>
-      <div class="center_this">
-        <button ng-click="deleteCookies()">DELETE COOKIES</button>
-      </div>
-      <br>
-    </div>
 
+    </div>
     <div class="col-md-12" class="center_this">
       <div role="alert" class="center_this ">
+
         <h4>{{warningMessage}}</h4>
 
         <h4 class="error" ng-show="dunderForm.input.$error.required">
@@ -82,6 +73,27 @@
         </h4>
 
       </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="col-md-12">
+      <div class="center_this">
+        <h5>Test emails</h5>
+        <h6>Nathan@yesenia.net</h6>
+        <h6>Sincere@april.biz</h6>
+        <h6>Shanna@melissa.tv</h6>
+        <br>
+        <div class="center_this">
+          <button ng-click="deleteCookies()">DELETE COOKIES</button>
+        </div>
+      </div>
+    </div>
+
   </form>
 
 

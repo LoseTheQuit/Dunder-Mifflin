@@ -9,7 +9,7 @@
 
     <div class="col-sm-2"> <br>
       <div class="center_this">
-        <button ng-click="deleteCookies()">LOGOUT/DELETE COOKIES</button>
+        <button ng-click="deleteCookies()">LOGOUT</button>
       </div>
       <br>
     </div>
@@ -33,8 +33,9 @@
   </div>
 
   <div class="col-md-8">
-    <div class="card">
-      <div ng-repeat="post in currentPosts">
+
+    <div ng-repeat="post in currentPosts">
+      <div class="card">
         <h2>Title</h2>
         <p>{{post.title}}</p>
         <h2>Body</h2>

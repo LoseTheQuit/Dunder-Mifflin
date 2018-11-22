@@ -20,7 +20,9 @@ app.controller("alloyController", function(
   $scope.postsList = alloyService.PostsList;
   $scope.commentsList = alloyService.CommentsList;
   $scope.currentPostIDs = [];
-
+  $scope.myFunc = function() {
+    console.log("I WAS CLICKED");
+  };
   $scope.findCurrentUser = function() {
     const currentUser = $cookieStore.get("currentUser");
     let userData = {};
@@ -54,13 +56,10 @@ app.controller("alloyController", function(
     new Promise((resolve, reject) => {
       alloyService.CommentsList = _comments;
 
-      console.log($scope.currentPostIDs);
-
       alloyService.CommentsList.map(comment => {
         if ($scope.currentPostIDs.includes(comment.postId)) {
           alloyService.UserPostsList.map(post => {
             if (comment.postId === post.id) {
-              console.log(comment);
               post.comments.push(comment);
             }
           });

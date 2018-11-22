@@ -1,10 +1,7 @@
-# nthRESTFul
- 
-- Alpha 1.0.0
+# DUNDER MIFFLIN
 
-# Change Log
+# npm install
 
-6/26/2016
+# bower install
 
-"first commit"
- 
+I decided to upload any dependencies to avoid any issues.
